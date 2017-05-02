@@ -8,9 +8,9 @@ public class Main {
     int reviewScore;
     String reviewText;
     String review;
-    double check = 0;
+    double key = 0;
     HashTable table = new HashTable(20000);
-    System.out.println("enter a review -- Press return to exit:");
+    System.out.println("Enter a review:");
     review = keyboard.nextLine();
     String[] arr = review.split(" ");
     for (String word : arr) {
@@ -21,26 +21,15 @@ public class Main {
         reviewText = reviewScanner.nextLine().toLowerCase();
         if (reviewText.contains(word)) {
           table.put(reviewText, reviewScore);
-          check = table.getAverage(reviewText);
-          
+          key = table.getAverage(reviewText);
         }
-        
       }
-      
     }
-    
-    System.out.println("The review has an average value of " + check );
-    
-    if (check > 2) {
-      
-      System.out.println("Positive Sentiment");
-      
-    } else {
-      
+    System.out.println("The review has an average value of " + key );
+    if (key < 2) {
       System.out.println("Negative Sentiment");
-      
+    } else {
+      System.out.println("Positive Sentiment");
     }
-    
   }
-  
 }
