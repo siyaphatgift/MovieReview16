@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Prptri
  */
-public class MovieReview {
+public class Main {
 
     /**
      * @param args the command line arguments
