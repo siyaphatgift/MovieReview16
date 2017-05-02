@@ -50,13 +50,18 @@ public class MovieReview {
             }
         }
         System.out.println("The review has an average value of " + D);
-        if (D < 2) {
+        if (D==0){
+            System.out.println("No Words");
+        }
+        else if (D<2 && D!=0){
             System.out.println("Negative Sentiment");
-        } else {
+        }
+         else{
             System.out.println("Positive Sentiment");
         }
     }
 }
+
 
     
 
