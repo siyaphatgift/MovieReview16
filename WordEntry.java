@@ -21,5 +21,4 @@ public class WordEntry {
     public double getAverage(){
         return (double)score/ numAppearance;
     }
-    
 }
