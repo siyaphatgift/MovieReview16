@@ -1,12 +1,20 @@
 import java.util.*;
 
 public class HashTable {
-  List<WordEntry> wordEntryList = new ArrayList();
+  //List<WordEntry> wordEntryList = new ArrayList();
+  private WordEntry []word;
   private int size;
   
+  public HashTable(int s)
+  {
+    this.size = s;
+    word = new WordEntry[s];
+  }
+  
   public int computeHash(String s) {
+    //String 
     int x = 1;
-    for (WordEntry a: wordEntryList) {
+    for (WordEntry a: word) {
       if(a.getWord().equals(s)) {
         x++;
       }
@@ -14,11 +22,7 @@ public class HashTable {
     return x;
   }
   
-  public HashTable (int s)
-  {
-    
-  }
-  public boolean contains(String s) {
+  /*public boolean contains(String s) {
     boolean x = false;
     for(WordEntry a: wordEntryList) {
       if (a.getWord().equals(s)){
@@ -26,33 +30,32 @@ public class HashTable {
       }
     }
     return x;
-  }
+  }*/
   
    public double getAverage(String s) {
     double x = 2.0D;
-    if(contains(s)) {
+    /*if(contains(s)) {
       getWordEntry(s).getAverage();
     }
-    return x;
+    return x;*/
   }
   
   public WordEntry getWordEntry(String s) {
     WordEntry a = null;
-    for(WordEntry word: wordEntryList) {
+    /*for(WordEntry word: wordEntryList) {
       if(word.getWord().equals(s)) {
         a = word;
       }
-    }
+    }*/
     return a;
   }
  
   public void put(String s, int score) {
-    if(contains(s)) {
+    /*if(contains(s)) {
       getWordEntry(s).addNewAppearance(score);
-    }else {
+    }else {*/
       WordEntry a = new WordEntry(s, score);
       wordEntryList.add(a);
     }
   }
-  
 }
